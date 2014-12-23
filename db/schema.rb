@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220214437) do
+ActiveRecord::Schema.define(version: 20141223211216) do
 
   create_table "areas", force: true do |t|
     t.string   "name"
@@ -173,6 +173,16 @@ ActiveRecord::Schema.define(version: 20141220214437) do
   end
 
   add_index "traditional_routes", ["wall_id"], name: "index_traditional_routes_on_wall_id"
+
+  create_table "user_sport_routes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "sport_route_id"
+    t.integer  "complete"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_sport_routes", ["user_id"], name: "index_user_sport_routes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "username"
