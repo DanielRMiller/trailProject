@@ -3,4 +3,5 @@ class UserSportRoutes < ActiveRecord::Base
   validates :complete, :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 1 }
   belongs_to :user
   belongs_to :sport_route
+  validates_uniqueness_of :sport_route, :scope => :user
 end

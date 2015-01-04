@@ -1,17 +1,25 @@
 class UserRoutesController < ApplicationController
+  before_action :authorizeUser
   
   # gets
     def showAll
+      @climbs = getAll()
     end
     
     def showClimbed
+      @climbs = getClimbed()
     end
 
     def showUnclimbed
+      @climbs = getUnclimbed()
     end
 
   # posts
     def addClimb
+      if params[:route]
+        # get user
+
+      end
     end  
 
   # puts
@@ -22,11 +30,11 @@ class UserRoutesController < ApplicationController
     def removeClimb
     end
 
-private
-  def getAll
-  end
-  def getClimbed
-  end
-  def getUnclimbed
-  end
+  private
+    def getAll
+    end
+    def getClimbed
+    end
+    def getUnclimbed
+    end
 end

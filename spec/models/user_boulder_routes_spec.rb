@@ -25,4 +25,19 @@ RSpec.describe UserBoulderRoutes, :type => :model do
     subject = FactoryGirl.build(:user_boulder_route, complete:-1)
     expect(subject).to_not be_valid
   end
+  it "is invalid if matching entry already exists" do
+    user = FactoryGirl.create(:user)
+    boulder_route = FactoryGirl.create(:boulder_route)
+    subject = FactoryGirl.create(:user_boulder_route, user_id: user.id, boulder_route_id: boulder_route.id)
+    expect(subject).to be_valid
+    subject2 = FactoryGirl.build(:user_boulder_route, user_id: user.id, boulder_route_id: boulder_route.id)
+    expect(subject2).to_not be_valid
+  end
+  it "is valid when user addes many routes" do
+    user = FactoryGirl.create(:user)
+    subject = FactoryGirl.create(:user_boulder_route, user_id: user.id)
+    expect(subject).to be_valid
+    subject2 = FactoryGirl.build(:user_boulder_route, user_id: user.id)
+    expect(subject2).to be_valid
+  end
 end

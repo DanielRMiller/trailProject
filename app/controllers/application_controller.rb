@@ -30,4 +30,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def authorizeUser
+      if session[:user_id]
+          return true;
+      else
+        redirect_to login_url
+      end
+    end
+
 end
