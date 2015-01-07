@@ -15,7 +15,7 @@ class UserRoutesController < ApplicationController
     end
 
   # posts
-    def addClimb
+    def addRoute
       if params[:route]
         # get user
 
@@ -23,11 +23,11 @@ class UserRoutesController < ApplicationController
     end  
 
   # puts
-    def updateClimb
+    def updateRoute
     end
 
   # deletes
-    def removeClimb
+    def removeRoute
     end
 
   private
