@@ -16,7 +16,7 @@ var GoogleMapController = function(data) {
 	var PIN_IMAGE = new google.maps.MarkerImage(PIN_RESOURCE + PIN_COLOR, PIN_SIZE, PIN_POINT1, PIN_POINT2);
 
 	/**
-	* inicialize the map
+	* initialize the map
 	*/
 	this.markerArray = [];
 	var mapOptions = {
